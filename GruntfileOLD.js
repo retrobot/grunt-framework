@@ -28,9 +28,24 @@ module.exports = function(grunt) {
         }
       }
     },
+  // livereload settings
+     livereload: {
+       port: 35728, // Default liverreload listening port
+    },
+    connect: {
+      livereload: {
+        options: {
+	        port: 9001,
+	        middleware: function(connect, options) {
+	          return [lrSnippet, folderMount(connect, options.base)]
+	        }
+      	}
+      }
+    },
     watch: {
 	options: {
 	  livereload: true,
+	//  livereload: 1337,
 	},
 	html: {
           files: ['./**/*.html', '!node_modules/**/*.*'],
@@ -106,7 +121,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('deploy', ['rsync:dist']);
 //  grunt.registerTask('images', ['imagemin:dist']);
-  grunt.registerTask('default', ['compass:dist','watch']);
+  grunt.registerTask('default', ['compass:dist','livereload-start','connect','watch']);
 };
 
 
