@@ -29,14 +29,19 @@ module.exports = function(grunt) {
       }
     },
     watch: {
-	options: {
-	  livereload: true,
-	},
-	html: {
-          files: ['./**/*.html', '!node_modules/**/*.*'],
+      options: {
+        livereload: true,
       },
+      html: {
+        files: ['./**/*.{phtml,xml,html}','./**/*.css','!node_modules/**/*.*'],
+      },
+      sass: {
+        files: ['sass/*.{scss,sass}'],
+        tasks: ['compass:dist'],
+      },
+
     },
-  // image minification settings
+// image minification settings
     imagemin: {
       dist: {
         options: {
@@ -68,9 +73,9 @@ module.exports = function(grunt) {
     rsync: {
       dist: {
           src: "./",
-          dest: "public_html/blog",
-	  host: "infashi1@infashiononline.com",
-	  port: "3784",
+          dest: "public_html",
+          host: "kiwikrea@kamilkielan.com",
+          port: "3784",
           recursive: true,
           exclude: [".git*","*.scss"]
 	       // syncDest: true
@@ -78,7 +83,7 @@ module.exports = function(grunt) {
       "staging": {
           src: "./",
 	        dest: "public_html",
-          host: "infashi1@infashiononline.com",
+          host: "kiwikrea@kamilkielan.com",
           port: "3784", // Use the rsyncwrapper port option to set a non-standard ssh port if required.
           recursive: true,
           syncDest: false
@@ -86,7 +91,7 @@ module.exports = function(grunt) {
       "deploy-live": {
           src: "../dist/",
           dest: "/var/www/site/blog",
-          host: "infashi1@infashiononline.com",
+          host: "kiwikrea@kamilkielan.com",
           port: "3784",
           recursive: true,
           syncDest: true
