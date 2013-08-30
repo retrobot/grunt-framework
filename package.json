@@ -1,32 +1,34 @@
 {
-  "name": "WPbones",
-  "version": "0.0.0",
-  "description": "WP on bones starter theme",
-  "main": "index.js",
+  "name": "grunt-framework",
+  "version": "0.0.1",
+  "description": "Grunt project framework",
+  "main": "Gruntfile.js",
   "scripts": {
-    "test": "Testing wpbones"
+    "test": "Testing"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-jshint": "~0.1.1",
-    "grunt-contrib-nodeunit": "~0.1.2",
-    "grunt-contrib-livereload": "~0.1.2",
-    "grunt-regarde": "~0.1.1",
-    "grunt-contrib-connect": "~0.3.0",
-    "grunt-contrib-compass": "~0.2.0",
-    "grunt-contrib-imagemin": "~0.1.4",
+    "bower": "~0.6.8",
+    "grunt-contrib-clean": "git://github.com/gruntjs/grunt-contrib-clean.git"
+    "grunt-contrib-compass": "git://github.com/gruntjs/grunt-contrib-compass.git",
+    "grunt-contrib-concat": "git://github.com/gruntjs/grunt-contrib-concat.git",
+    "grunt-contrib-copy": "https://github.com/ctalkington/grunt-contrib-copy/archive/patch4.tar.gz",
+    "grunt-contrib-imagemin": "git://github.com/gruntjs/grunt-contrib-imagemin.git",
+    "grunt-contrib-jshint": "git://github.com/gruntjs/grunt-contrib-jshint.git",
+    "grunt-contrib-mincss": "git://github.com/gruntjs/grunt-contrib-mincss.git",
+    "grunt-contrib-uglify": "git://github.com/gruntjs/grunt-contrib-uglify.git",
+    "grunt-contrib-watch": "git://github.com/gruntjs/grunt-contrib-watch.git",
     "grunt-rsync": "~0.1.1",
-    "grunt-contrib-watch": "~0.4.3"
-  },
+    "grunt-contrib-nodeunit": "~0.1.2",
+    "grunt-contrib-connect": "~0.3.0",
+  },  
   "repository": {
     "type": "git",
-    "url": "https://github.com/retrobot/wpbones"
+    "url": "https://github.com/retrobot/grunt-framework"
   },
   "keywords": [
-    "WP",
-    "theme",
-    "bones",
-    "starter"
+    "Project",
+    "files"
   ],
   "author": "KK",
   "license": "BSD",
