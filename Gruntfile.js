@@ -1,16 +1,7 @@
-'use strict';
-var path = require('path');
-var lrSnippet = require('grunt-contrib-livereload/lib/utils').livereloadSnippet;
-
-var folderMount = function folderMount(connect, point) {
-  return connect.static(path.resolve(point));
-}
-
-
 module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-  // Compass settings
+ // Compass settings
     compass: {                  // Task
       dist: {                   // Target
         options: {              // Target options
@@ -108,20 +99,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-rsync');
 
-
   grunt.registerTask('deploy', ['rsync:dist']);
 //  grunt.registerTask('images', ['imagemin:dist']);
   grunt.registerTask('default', ['compass:dist','watch']);
 };
-
-
-
-
-
-
-
-
-
-
-
-
